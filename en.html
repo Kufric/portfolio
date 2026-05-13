@@ -124,4 +124,19 @@
 <a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:line-through hover:text-primary transition-all" href="mailto:jakubfrfr@gmail.com">Email</a></div>
 </div>
 </footer>
+<script>
+    function copyEmail(btn) {
+        // Zkopíruje tvůj email do schránky
+        navigator.clipboard.writeText("jakubfrfr@gmail.com").then(function() {
+            // Najde to skryté okénko hned pod tlačítkem
+            const toast = btn.nextElementSibling;
+            // Zviditelní ho
+            toast.classList.remove("opacity-0");
+            // Po 2 sekundách (2000 milisekund) ho zase skryje
+            setTimeout(function() {
+                toast.classList.add("opacity-0");
+            }, 2000);
+        });
+    }
+</script>
 </body></html>
